@@ -13,6 +13,7 @@ function archKde5 {
 
   pacman -Sy --noconfirm --needed archlinux-keyring
   pacman -Syu --noconfirm
+  yes | pacman -Syu
 
   if [[ $(glxinfo | grep -E "OpenGL vendor|OpenGL renderer") == *"AMD"* ]]; then
     pacman -S --noconfirm --needed vulkan-radeon lib32-vulkan-radeon mesa-utils vulkan-tools adriconf
@@ -25,8 +26,8 @@ function archKde5 {
   fi
 
   pacman -S --noconfirm --needed pipewire
-  pacman -Rn --noconfirm pulseaudio
-  pacman -S --noconfirm --needed pipewire-pulse
+  #pacman -R --noconfirm pulseaudio
+  yes | pacman -S --needed pipewire-pulse
   #systemctl enable pipewire{,-pulse}.{socket,service} pipewire-media-session.service
 
 
