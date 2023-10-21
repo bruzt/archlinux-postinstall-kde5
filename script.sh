@@ -27,7 +27,7 @@ function archKde5 {
   pacman -S --noconfirm --needed pipewire
   pacman -Rn --noconfirm pulseaudio
   pacman -S --noconfirm --needed pipewire-pulse
-  systemctl enable pipewire{,-pulse}.{socket,service} pipewire-media-session.service
+  #systemctl enable pipewire{,-pulse}.{socket,service} pipewire-media-session.service
 
 
   pacman -S --noconfirm --needed packagekit-qt5 flatpak fwupd partitionmanager filelight kolourpaint kcalc ufw ttf-droid noto-fonts-emoji net-tools docker go
@@ -63,7 +63,7 @@ function archKde5 {
   sudo -u $SUDO_USER yay -S --noconfirm --needed goverlay-bin mangohud # vkbasalt lib32-vkbasalt
 
   flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-  flatpak install -y com.github.tchx84.Flatseal org.onlyoffice.desktopeditors com.github.wwmm.easyeffects org.videolan.VLC org.kde.kdenlive com.heroicgameslauncher.hgl net.davidotek.pupgui2
+  flatpak install -y com.github.tchx84.Flatseal org.onlyoffice.desktopeditors com.github.wwmm.easyeffects org.videolan.VLC org.kde.kdenlive com.heroicgameslauncher.hgl net.davidotek.pupgui2 com.obsproject.Studio
   #flatpak install -y com.leinardi.gst
 
   ### DEV
