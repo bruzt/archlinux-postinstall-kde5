@@ -12,8 +12,8 @@ function archKde5 {
   sed -i 's/\#\[multilib\]/\[multilib\]\nInclude = \/etc\/pacman.d\/mirrorlist/g' /etc/pacman.conf
 
   pacman -Sy --noconfirm --needed archlinux-keyring
-  pacman -Syu --noconfirm
-  yes | pacman -Syu
+  yes | pacman -Su
+  pacman -Su --noconfirm
 
   if [[ $(glxinfo | grep -E "OpenGL vendor|OpenGL renderer") == *"AMD"* ]]; then
     pacman -S --noconfirm --needed vulkan-radeon lib32-vulkan-radeon mesa-utils vulkan-tools adriconf
