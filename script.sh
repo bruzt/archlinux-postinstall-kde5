@@ -30,8 +30,7 @@ function archKde5 {
   yes | pacman -S --needed pipewire-pulse
   #systemctl enable pipewire{,-pulse}.{socket,service} pipewire-media-session.service
 
-
-  pacman -S --noconfirm --needed discover packagekit-qt5 xdg-desktop-portal-kde flatpak fwupd partitionmanager filelight kolourpaint kcalc ufw ttf-droid noto-fonts-emoji net-tools docker go
+  pacman -S --noconfirm --needed discover packagekit-qt5 xdg-desktop-portal-kde flatpak fwupd partitionmanager filelight kolourpaint kcalc plasma-firewall ufw ttf-droid noto-fonts-emoji net-tools docker go
 
   pacman -S --noconfirm --needed print-manager cups system-config-printer
   systemctl enable cups
