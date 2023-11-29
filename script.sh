@@ -30,7 +30,9 @@ function archKde5 {
   yes | pacman -S --needed pipewire-pulse
   #systemctl enable pipewire{,-pulse}.{socket,service} pipewire-media-session.service
 
-  pacman -S --noconfirm --needed discover packagekit-qt5 xdg-desktop-portal-kde flatpak fwupd partitionmanager filelight kolourpaint kcalc plasma-firewall ufw ttf-droid noto-fonts-emoji net-tools docker go
+  pacman -S --noconfirm --needed discover packagekit-qt5 fwupd xdg-desktop-portal-kde flatpak
+  pacman -S --noconfirm --needed partitionmanager filelight kolourpaint kcalc ttf-droid noto-fonts-emoji net-tools docker go
+  pacman -S --noconfirm --needed plasma-firewall ufw
 
   pacman -S --noconfirm --needed print-manager cups system-config-printer
   systemctl enable cups
@@ -57,10 +59,10 @@ function archKde5 {
   #sudo -u $SUDO_USER yay -S --noconfirm --needed pamac-tray-icon-plasma
   sudo -u $SUDO_USER yay -S --noconfirm --needed dropbox
   sudo -u $SUDO_USER yay -S --noconfirm --needed cpu-x
-  #sudo -u $SUDO_USER yay -S --noconfirm --needed timeshift
+  #pacman -S --noconfirm --needed timeshift
 
   pacman -S --noconfirm --needed steam-native-runtime gamemode lib32-gamemode lutris
-  sudo -u $SUDO_USER yay -S --noconfirm --needed goverlay-bin mangohud # vkbasalt lib32-vkbasalt
+  pacman -S --noconfirm --needed goverlay mangohud lib32-mangohud # vkbasalt lib32-vkbasalt
 
   flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
   flatpak install -y com.github.tchx84.Flatseal org.onlyoffice.desktopeditors com.github.wwmm.easyeffects org.videolan.VLC org.kde.kdenlive com.heroicgameslauncher.hgl net.davidotek.pupgui2 com.obsproject.Studio
